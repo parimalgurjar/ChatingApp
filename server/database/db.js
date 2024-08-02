@@ -5,12 +5,11 @@ dotenv.config();
 
 const USERNAME = process.env.DB_USERNAME;
 const PASSWORD = process.env.DB_PASSWORD;
-const DB_NAME = process.env.DB_NAME || 'yourDatabaseName';
 
 // Set the strictQuery option
 mongoose.set('strictQuery', false);
 
-const URL = `mongodb+srv://${USERNAME}:${PASSWORD}@whatsappclone.vln2tdj.mongodb.net/${DB_NAME}`;
+const URL = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.s1p1uwt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 const Connection = async () => {
     try {

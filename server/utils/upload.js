@@ -8,23 +8,10 @@ dotenv.config();
 const USERNAME = process.env.DB_USERNAME || 'defaultUsername';
 const PASSWORD = process.env.DB_PASSWORD || 'defaultPassword';
 
-/*const URL = `mongodb+srv://${USERNAME}:${PASSWORD}@whatsappclone.vln2tdj.mongodb.net/`;
 
-const conn = mongoose.createConnection(URL, {
-    
-});
-
-let gridFsBucket;
-
-conn.once('open', () => {
-    gridFsBucket = new mongodb.GridFSBucket(conn.db, {
-        bucketName: 'fs'
-    });
-});
-*/
 
 const storage = new GridFsStorage({
-    url:`mongodb+srv://${USERNAME}:${PASSWORD}@whatsappclone.vln2tdj.mongodb.net/`,
+    url:`mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.s1p1uwt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
     options:{ useNewUrlParser: true,
         useUnifiedTopology: true },
     file: (request, file) => {
